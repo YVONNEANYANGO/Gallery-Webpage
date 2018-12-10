@@ -4,19 +4,19 @@ import datetime as dt
 from django.http import HttpResponse,Http404
 
 # Create your views here.
-def welcome(request):
-    return render('request, 'welcome.html')
+# def welcome(request):
+# return render('request, 'welcome.html')
 
 def photos_of_day(request):
     date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1>{date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    # html = f'''
+    #     <html>
+    #         <body>
+    #             <h1>{date.day}-{date.month}-{date.year}</h1>
+    #         </body>
+    #     </html>
+    #         '''
+    # return HttpResponse(html)
 
 def convert_dates(dates):
 
@@ -35,14 +35,14 @@ def photos_of_day(request):
 
     # function to convert date object to find exact day
     day = convert_dates(date)
-    html = f'''
-        <html>
-            <body>
-                <h1>Photos for {date} {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    # html = f'''
+    #     <html>
+    #         <body>
+    #             <h1>Photos for {date} {date.day}-{date.month}-{date.year}</h1>
+    #         </body>
+    #     </html>
+    #         '''
+    # return HttpResponse(html)
 
 def past_days_news(request, past_date):
 
