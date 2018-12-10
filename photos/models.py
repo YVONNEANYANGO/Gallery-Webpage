@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime as dt
 
 # Create your models here.
 class Photographer(models.Model):
@@ -27,3 +27,11 @@ class Image(models.Model):
     Photographer = models.ForeignKey(Photographer)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
+
+
+    @classmethod
+    def todays_photos(cls):
+        today = dt.date.today()
+        news = cls.objects.filter(pub_date__date = today)
+        return photos
+   

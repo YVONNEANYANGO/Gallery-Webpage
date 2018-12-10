@@ -1,11 +1,21 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 import datetime as dt
-from django.http import HttpResponse,Http404
+from django.http import Http404
+# from .models import Image
+
 
 # Create your views here.
 def welcome(request):
     return HttpResponse(request, 'welcome.html')
+
+
+def photos_today(request):
+    date = dt.datetime.today()
+    # photos = Image.todays_photos()
+
+    return render(request, 'all-photos/today-photos.html', {"date": date,})
+
 
 def convert_dates(dates):
 
@@ -18,14 +28,8 @@ def convert_dates(dates):
     day = days[day_number]
     return day
 
-def photos_of_day(request):
-    date = dt.datetime.today()
-    return render(request, 'all-photos/today-photos.html', {"date": date,})
 
-    # function to convert date object to find exact day
-    day = convert_dates(date)
     
-
 def past_days_photos(request, past_date):
 
     try:
@@ -38,6 +42,8 @@ def past_days_photos(request, past_date):
         assert False
 
     if date == dt.date.today():
-        return redirect(photos_of_day)
+        return redirect(photos_today)
+
+    # photos = Image.todays_photos(date)
 
     return render(request, 'all-photos/past-photos.html', {"date": date})
