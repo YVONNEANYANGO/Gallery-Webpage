@@ -32,6 +32,11 @@ class Image(models.Model):
     @classmethod
     def todays_photos(cls):
         today = dt.date.today()
-        news = cls.objects.filter(pub_date__date = today)
+        photos = cls.objects.filter(pub_date__date = today)
+        return photos
+
+    @classmethod
+    def days_photos(cls,date):
+        photos = cls.objects.filter(pub_date__date = date)
         return photos
    

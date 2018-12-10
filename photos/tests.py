@@ -19,33 +19,28 @@ class PhotographerTestClass(TestCase):
         self.new_image.save()
 
         self.new_image.tags.add(self.new_tag)
-def test_get_news_by_date(self):
+def test_get_photos_by_date(self):
         test_date = '2017-03-17'
         date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
-        news_by_date = Article.days_news(date)
-        self.assertTrue(len(news_by_date) == 0)
+        photos_by_date = Image.days_photos(date)
+        self.assertTrue(len(photos_by_date) == 0)
 
-    def tearDown(self):
+def tearDown(self):
         Photographer.objects.all().delete()
         tags.objects.all().delete()
         Image.objects.all().delete()
 
     # Testing instance
-    def test_instance(self):
-        self.assertTrue(isinstance(self.nadia,Photographer))
+def test_instance(self):
+    self.assertTrue(isinstance(self.nadia,Photographer))
 
     # Testing Save Method
-    def test_save_method(self):
+def test_save_method(self):
         self.nadia.save_photographer()
         photographers = Photographer.objects.all()
         self.assertTrue(len(photographers) > 0)
 
-    def test_get_photos_today(self):
+def test_get_photos_today(self):
         today_photos = Image.todays_photos()
         self.assertTrue(len(today_photos)>0)
 
-    def test_get_photos_by_date(self):
-        test_date = '2017-03-17'
-        date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
-        news_by_date = Image.todays_photos(date)
-        self.assertTrue(len(news_by_date) == 0)
