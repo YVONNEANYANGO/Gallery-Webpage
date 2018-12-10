@@ -27,6 +27,7 @@ class Image(models.Model):
     Photographer = models.ForeignKey(Photographer)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to = 'images/')
 
 
     @classmethod
