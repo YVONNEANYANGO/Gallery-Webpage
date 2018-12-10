@@ -18,3 +18,11 @@ class Photographer(models.Model):
 
         def __str__(self):
             return self.name
+
+
+class Image(models.Model):
+    title = models.CharField(max_length = 60)
+    post = models.TextField()
+    Photographer = models.ForeignKey(Photographer)
+    tags = models.ManyToManyField(tags)
+    pub_date = models.DateTimeField(auto_now_add=True)
