@@ -5,11 +5,18 @@ import datetime as dt
 class Location(models.Model):
     name = models.CharField(max_length = 60)
 
-    # def __str__(self):
-    #     return self.first_name
+    
 
     # class Meta:
     #     ordering = ['first_name']
+    def save_location(self):
+        self.save()
+    
+    def delete_category(self):
+        self.delete()
+
+    def __str__(self):
+        return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length =30)
@@ -19,7 +26,6 @@ class Category(models.Model):
 
     def delete_category(self):
         self.delete()
-
 
 
 
@@ -36,16 +42,28 @@ class Image(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
 
 
+   
     @classmethod
     def get_all_images(cls):
-        images=cls.objects.all()
-        return images
+       images = Image.objects.all()
+       return images
+       print(images)
 
-    
-       
+    @classmethod
+    def get_image_by_id(self,image):
+       image= Image.objects.get(id = id)
+       return image
 
     @classmethod
     def search_by_category(cls,search_term):
-        photos = cls.objects.filter(category__name__icontains=search_term)
-        return photos
+       images = cls.objects.filter(category__name__icontains=search_term)
+       return images
+
+    @classmethod
+    def filter_by_location(cls,location):
+       images = cls.objects.filter(category__name__icontains=location)
+
+       return images
+    def __str__(self):
+       return self.name
    
