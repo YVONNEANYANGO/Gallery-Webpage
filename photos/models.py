@@ -38,7 +38,7 @@ class Image(models.Model):
 
     @classmethod
     def get_all_images(cls):
-        images=Image.objects.all()
+        images=cls.objects.all()
         return images
 
     

@@ -3,4 +3,3 @@ virtual/
 instance/
 __pycache__/
 .vscode/
-manage.py
