@@ -2,24 +2,23 @@
 
 {% block content %}
 
-<div class="container">
+ <div class="container">
 
     <div class="row">
-        <img src="{{article.article_image.url}}" class="img-responsive" alt="">
+    {% for image in images%}
+    <a class="white-text" href="/image/{{image.id}}"><img src="{{image.image.url}}">
+        {%endfor%}
     </div>
 
     <div class="row">
-        <h1 class="text-center">{{image.title}}</h1>
+        <h1 class="text-center">{{image.name}}</h1>
     </div>
 
     <div class="row">
-        <p>{{image.post}}</p>
+        <p>{{image.description}}</p>
     </div>
 
-    <div class="row">
-        <p>Posted {{image.pub_date|timesince}} by {{image.editor.first_name}}</p>
-    </div>
 
-</div>
+</div> 
 
 {% endblock %}

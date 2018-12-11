@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Photographer,Image,tags
+from .models import Location,Image,Category
 import datetime as dt
 
  #Create our tests here
@@ -26,8 +26,8 @@ def test_get_photos_by_date(self):
         self.assertTrue(len(photos_by_date) == 0)
 
 def tearDown(self):
-        Photographer.objects.all().delete()
-        tags.objects.all().delete()
+        Location.objects.all().delete()
+        category.objects.all().delete()
         Image.objects.all().delete()
 
     # Testing instance
