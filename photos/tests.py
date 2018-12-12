@@ -3,27 +3,20 @@ from .models import Location,Image,Category
 import datetime as dt
 
  #Create our tests here
-class PhotographerTestClass(TestCase):
+class ImageTestClass(TestCase):
 
     # Set up method
-    def setUp(self):
-        # Creating a new photographer and saving it
-        self.nadia= Photographer(first_name = 'Nadia', last_name ='Buari', email ='nadiabuari@gmail.com')
-        self.nadia.save_photographer()
+def setUp(self):
+     
+        # Creating a new image and saving it
+        self.new_image= Image(name = 'Test Image',description = 'This is a random test Post', location ='UK', category = 'Fashion')
+        self.new_image.save()
 
         # Creating a new tag and saving it 
         self.new_tag = tags(name = 'testing')
         self.new_tag.save()
 
-        self.new_image= Image(title = 'Test Image',post = 'This is a random test Post',photographer = self.nadia)
-        self.new_image.save()
-
         self.new_image.tags.add(self.new_tag)
-def test_get_photos_by_date(self):
-        test_date = '2017-03-17'
-        date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
-        photos_by_date = Image.days_photos(date)
-        self.assertTrue(len(photos_by_date) == 0)
 
 def tearDown(self):
         Location.objects.all().delete()
@@ -36,11 +29,13 @@ def test_instance(self):
 
     # Testing Save Method
 def test_save_method(self):
-        self.nadia.save_photographer()
-        photographers = Photographer.objects.all()
-        self.assertTrue(len(photographers) > 0)
+        self.image.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
 
-def test_get_photos_today(self):
-        today_photos = Image.todays_photos()
-        self.assertTrue(len(today_photos)>0)
+def test_delete_method(self):
+        self.image.delete_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
+
 

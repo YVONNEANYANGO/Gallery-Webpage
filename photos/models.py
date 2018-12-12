@@ -5,8 +5,6 @@ import datetime as dt
 class Location(models.Model):
     name = models.CharField(max_length = 60)
 
-    
-
     # class Meta:
     #     ordering = ['first_name']
     def save_location(self):
