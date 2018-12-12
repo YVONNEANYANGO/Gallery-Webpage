@@ -2,28 +2,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/css?family=Aclonica|Saira" rel="stylesheet">
+<!--Import materialize.css-->
 
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        {% for image in images%}
-            <a class="white-text" href="/image/{{image.id}}"><img  src="{{image.image.url}}" alt="">
-                {%endfor%}
-    </div>
+
+<div class="container-fluid" style="font-family: fantasy">
+    <div class="jumbotron" style="background-color: burlywood">
         <div class="row">
-            <h1 class="text-center">{{image.name}}</h1>
+            {% for image in images%}
+                <a class="white-text"  href="/image/{{image.id}}"><br><br><img  style="border-radius: 80%" src="{{image.image.url}}"  height="300" width="300" alt="Photos">
+            {%endfor%}
         </div>
+            <div class="row">
+                <h1 class="text-center">{{image.name}}</h1>
+            </div>
             <div class="row">
                 <p>{{image.description}}</p>
             </div>
             <div class="row">
-                <p>{{image.Category}}</p>
+                <p>{{image.Category.name}}</p>
             </div>
             <div class="row">
-                <p>{{image.Location}}</p>
+                <p>{{image.Location.name}}</p>
             </div>
+    </div>
 </div> 
 
 {% endblock %}
