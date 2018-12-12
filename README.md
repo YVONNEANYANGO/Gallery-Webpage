@@ -27,7 +27,6 @@ The user is able to:
  Behaviour                    | Output                      | Expected Results                       |
 ------------------------------|-----------------------------|----------------------------------------|
  To view the image details    | Click on the image          | Details of the image will be displayed |
- -----------------------------|-----------------------------|----------------------------------------|
  To see a particular category | Enter a category you would  | A list of images will be displayed for |
  of images                    | like to view                | that category the user has entered     |
  
