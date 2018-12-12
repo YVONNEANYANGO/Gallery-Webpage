@@ -15,21 +15,21 @@
         <p style="font-size: 50px">Welcome to Amazing Photos</p>
     </div>
     <div class="jumbotron" style="background-color: burlywood">
-        <div class="row">
+        <div class="row" style="font-family: fantasy">
             {% for image in images%}
-                <a class="white-text"  href="/image/{{image.id}}"><br><br><img  style="border-radius: 80%" src="{{image.image.url}}"  height="300" width="300" alt="Photos">
+                <a class="white-text"  href="/image/{{image.id}}"><br><br><img  style="border-radius: 100%" src="{{image.image.url}}"  height="300" width="300" alt="Photos">
             {%endfor%}
         </div>
-            <div class="row">
+            <div class="row" style="font-family: fantasy">
                 <h1 class="text-center">{{image.name}}</h1>
             </div>
-            <div class="row">
+            <div class="row" style="font-family: fantasy">
                 <p>{{image.description}}</p>
             </div>
-            <div class="row">
+            <div class="row" style="font-family: fantasy">
                 <p>{{image.Category.name}}</p>
             </div>
-            <div class="row">
+            <div class="row" style="font-family: fantasy">
                 <p>{{image.Location.name}}</p>
             </div>
     </div>
