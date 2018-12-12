@@ -21,6 +21,16 @@ The user is able to:
 * Click on a single photo to expand it and view details of the photo
 * Search for different categories of photos
 * View photos based on the location they were taken
+
+## Behaviour Driven Development(BDD)
+
+ Behaviour                    | Output                      | Expected Results                       |
+------------------------------|-----------------------------|----------------------------------------|
+ To view the image details    | Click on the image          | Details of the image will be displayed |
+ -----------------------------|-----------------------------|----------------------------------------|
+ To see a particular category | Enter a category you would  | A list of images will be displayed for |
+ of images                    | like to view                | that category the user has entered     |
+ 
  
 ## Terminologies Used
 
@@ -35,7 +45,7 @@ The user is able to:
 
 Run this command in your terminal
 $ git clone https://github.com/YVONNEANYANGO/Gallery-Webpage.git
-$ cd Webpage
+$ cd Gallery-Webpage
 
 ## Testing the Application
 
