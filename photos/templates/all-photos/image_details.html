@@ -5,17 +5,15 @@
 <div class="container">
 
     <div class="row">
-        {% for image in images%}
-        <a class="white-text" href="/image/{{image.id}}"><img src="{{image.image.url}}">
-            {%endfor%}
+        <a class="white-text" href="/image/{{image.id}}"><img src="{{images.image.url}}">
     </div>
 
     <div class="row">
-        <h1 class="text-center">{{image.name}}</h1>
+        <h1 class="text-center">{{images.name}}</h1>
     </div>
 
     <div class="row">
-        <p>{{image.description}}</p>
+        <p>{{images.Description}}</p>
     </div>
 
 

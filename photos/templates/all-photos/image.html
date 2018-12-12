@@ -1,24 +1,30 @@
 {%extends 'all-photos/base.html'%}
 
+<!DOCTYPE html>
+<html lang="en">
+
+
 {% block content %}
 
- <div class="container">
-
+<div class="container">
     <div class="row">
-    {% for image in images%}
-    <a class="white-text" href="/image/{{image.id}}"><img src="{{image.image.url}}">
-        {%endfor%}
+        {% for image in images%}
+            <a class="white-text" href="/image/{{image.id}}"><img  src="{{image.image.url}}" alt="">
+                {%endfor%}
     </div>
-
-    <div class="row">
-        <h1 class="text-center">{{image.name}}</h1>
-    </div>
-
-    <div class="row">
-        <p>{{image.description}}</p>
-    </div>
-
-
+        <div class="row">
+            <h1 class="text-center">{{image.name}}</h1>
+        </div>
+            <div class="row">
+                <p>{{image.description}}</p>
+            </div>
+            <div class="row">
+                <p>{{image.Category}}</p>
+            </div>
+            <div class="row">
+                <p>{{image.Location}}</p>
+            </div>
 </div> 
 
 {% endblock %}
+

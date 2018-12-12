@@ -12,7 +12,7 @@ class Location(models.Model):
     def save_location(self):
         self.save()
     
-    def delete_category(self):
+    def delete_location(self):
         self.delete()
 
     def __str__(self):
@@ -55,13 +55,13 @@ class Image(models.Model):
        return image
 
     @classmethod
-    def search_by_category(cls,search_term):
-       images = cls.objects.filter(category__name__icontains=search_term)
+    def search_by_Category(cls,search_term):
+       images = cls.objects.filter(Category__name__icontains=search_term)
        return images
 
     @classmethod
     def filter_by_location(cls,location):
-       images = cls.objects.filter(category__name__icontains=location)
+       images = cls.objects.filter(Category__name__icontains=location)
 
        return images
     def __str__(self):
