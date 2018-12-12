@@ -11,6 +11,16 @@ Gallery-Webpage is an interractive application where users are provided with dif
  * Chilling Out
  * Women Wears
  * Pets
+ * Music
+
+## User Story
+
+The user is able to:
+
+* View different photos that interests him or her
+* Click on a single photo to expand it and view details of the photo
+* Search for different categories of photos
+* View photos based on the location they were taken
  
 ## Terminologies Used
 
