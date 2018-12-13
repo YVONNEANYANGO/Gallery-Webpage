@@ -40,6 +40,14 @@ The user is able to:
 * Django
 * Postgres db
 
+## Django Admin Username
+
+* moringaschool
+
+## Django Admin Password
+
+* valqueen
+
 ## How to Access the Application
 
 Run this command in your terminal
